@@ -2,7 +2,9 @@ package workflow_plugin
 
 import "fmt"
 
-type PluginRegister func(cfg interface{}) PluginInterface
+type ExecutePluginRegister func(cfg interface{}) ExecutePluginInterface
+type InterruptPluginRegister func(cfg interface{}) InterruptPluginInterface
+type ExpressionPluginRegister func() ExpressionPluginInterface
 
 type PluginInterface interface {
 	Name() string
